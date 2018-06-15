@@ -1,0 +1,28 @@
+h2{
+    margin: 1em auto 0 auto;
+    color: blue;
+    width: 90%;
+    font-size: 1.8em;
+}
+.info-card {
+    border: 1.5px solid #252525;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    vertical-align: top;
+}
+.info-card img{
+    width: 20%;
+}
+.info-card-main{
+    display: inline-block;
+    width: 65%;
+    margin: 0 15px;
+    vertical-align: top;
+}
+.info-card-sub{
+    display: inline-block;
+    width: 10%;
+    vertical-align: top;
+    text-align: right;
+}

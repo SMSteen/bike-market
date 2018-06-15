@@ -1,0 +1,34 @@
+<app-nav></app-nav>
+<app-bike-new (newBike)='onCreate($event)'></app-bike-new>
+
+
+<div class="bike-container">
+  <h1>Edit/Delete Listings</h1>
+  <div *ngFor="let bike of bikes" class="info-card">
+    <form #chgbike='ngForm'>
+      <div class="info-card-img">
+        <label for="imgURL">Upload Image</label>
+        <img src="{{bike.imgURL}}" alt="{{bike.title}}">
+        <input type="text" name="imgURL" required [(ngModel)]='bike.imgURL'>
+      </div>
+
+      <div class="info-card-main">
+        <label for="title">Listing Title:</label>
+        <input type="text" name="title" required [(ngModel)]='bike.title' #title='ngModel'>
+
+        <label for="description">Description:</label>
+        <textarea name="description" cols="30" rows="3" required [(ngModel)]='bike.description' #description='ngModel'></textarea>
+      </div>
+
+      <div class="info-card-sub">
+        <label for="price">Price:</label>
+        <input type="number" name="price" min="1" required [(ngModel)]='bike.price' #price='ngModel'>
+
+        <label for="location">Location:</label>
+        <input type="text" name="location" required [(ngModel)]='bike.location' #location='ngModel'>
+        <button (click)="onSubmit(bike)">Update</button>
+        <button (click)="onDelete(bike._id)" class="btn-risk">Delete</button>
+      </div>
+    </form>
+  </div>
+</div>

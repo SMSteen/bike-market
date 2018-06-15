@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container-fluid {
+  padding: 0 15px;
+}
+.container {
+  padding: 15px;
+}
+.container-fluid.footer {
+  padding: 10px;
+}
+footer {
+  display: inline-block;
+}
+img.footer-logo {
+  width: 3%;
+  margin-right: 5px;
+}
+button {
+  padding: 10px;
+  background-color: #003300;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 2px 2px 2px #808080;
+  cursor: pointer;
+  display: block;
+  margin: 5px auto;
+  grid-column: 2 / 3; /* use this line for grid-style forms */
+}
+button:disabled {
+  background-color: #808080;
+  color: whitesmoke;
+  border: none;
+  font-weight: inherit;
+  opacity: 0.4;
+  cursor: inherit;
+}
+.text-error {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  grid-column: 2 / 3; /* use this line for grid-style forms */
+}
+.btn-risk {
+  background-color: #990000;
+}
+.btn-caution {
+  background-color: #e6e600;
+  border: 1px solid #333300;
+  color: black;
+}

@@ -1,0 +1,39 @@
+<form (submit)='onSubmit(register.value, $event)' class="register" #register='ngForm'>
+  
+  <p class='text-error' *ngIf='registerError'>
+    {{registerError}}
+  </p>
+
+  <label for="first_name">First Name:</label>
+  <input type="text" name="first_name" required minlength="2" [(ngModel)]='user.first_name' #fname='ngModel' [ngModelOptions]="{updateOn: 'blur'}">
+  <p *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="text-error">
+    Please enter your first name.
+  </p>
+
+  <label for="last_name">Last Name: </label>
+  <input type="text" name="last_name" required minlength="2" [(ngModel)]='user.last_name' #lname='ngModel' [ngModelOptions]="{updateOn: 'blur'}">
+  <p *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="text-error">
+    Please enter your last name.
+  </p>
+
+  <label for="email">Email: </label>
+  <input type="text" name="email" required [(ngModel)]='user.email' #email='ngModel' [ngModelOptions]="{updateOn: 'blur'}">
+  <p *ngIf="email.invalid && (email.dirty || email.touched)" class="text-error">
+    Please enter a valid email address.
+  </p>
+
+  <label for="password">Password: </label>
+  <input type="password" name="password" id="#password" required minlength="8" [(ngModel)]='user.password' #password='ngModel' [ngModelOptions]="{updateOn: 'blur'}">
+  <p *ngIf="password.invalid && (password.dirty || password.touched)" class="text-error">
+    Password must be at least 8 characters, include one Uppercase letter and one number.
+  </p>
+
+  <label for="pwconf">Password Confirmation: </label>
+  <input type="password" name="pwconf" id="#pwconf" required [(ngModel)]='user.pwconf' #pwconf='ngModel' [pattern]='password.value'>
+  <p *ngIf="pwconf.touched && pwconf.invalid" class="text-error">
+    The passwords you entered do not match. Please try again.
+  </p>
+
+  <button type="submit" *ngIf='register.valid'>Register</button>
+  <button type="submit" *ngIf='!register.valid' disabled>Register</button>
+</form>

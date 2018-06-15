@@ -1,0 +1,24 @@
+<div class="new-bike-container">
+  <h1>Create Listing</h1>
+  <form (submit)='create(newbike, $event)' #newbike='ngForm' class="new-bike">
+
+    <label for="title">Listing Title:</label>
+    <input type="text" name="title" required [(ngModel)]='bike.title' #title='ngModel'>
+
+    <label for="description">Description:</label>
+    <textarea name="description" cols="30" rows="3" required [(ngModel)]='bike.description' #description='ngModel'></textarea>
+
+    <label for="price">Price:</label>
+    <input type="number" name="price" min="1" required [(ngModel)]='bike.price' #price='ngModel'>
+
+    <label for="location">Location:</label>
+    <input type="text" name="location" required [(ngModel)]='bike.location' #location='ngModel'>
+
+    <label for="imgURL">Upload Image:</label>
+    <input type="text" name="imgURL" required [(ngModel)]='bike.imgURL'>
+
+    <button *ngIf='newbike.valid' type="submit">Create</button>
+    <button *ngIf='!newbike.valid' type="submit" disabled>Create</button>
+
+  </form>
+</div>

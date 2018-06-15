@@ -1,0 +1,36 @@
+.bike-container {
+  width: 90%;
+  padding: 25px;
+  max-height: 600px;
+  overflow-y: scroll;
+  border: 2px solid #252525;
+  background-color: #cccccc;
+}
+h2 {
+  margin: 0.5em 0;
+}
+.info-card {
+  border: 1px dotted #252525;
+  width: 98%;
+  margin: 10px 0;
+  padding: 10px;
+  vertical-align: top;
+  background-color: whitesmoke;
+}
+.info-card img {
+  width: 20%;
+}
+.info-card-main {
+  display: inline-block;
+  width: 55%;
+  margin: 0 15px;
+  vertical-align: top;
+  background-color: whitesmoke;
+}
+.info-card-sub {
+  display: inline-block;
+  width: 15%;
+  vertical-align: top;
+  text-align: center;
+  background-color: whitesmoke;
+}
